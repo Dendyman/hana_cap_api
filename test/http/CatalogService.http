@@ -1,0 +1,47 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### Table
+# @name Table_GET
+GET {{server}}/odata/v4/catalog/Table
+{{auth}}
+
+
+### Table
+# @name Table_POST
+POST {{server}}/odata/v4/catalog/Table
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 8922169,
+  "auditor": "auditor-8922169",
+  "assetname": "assetname-8922169",
+  "assetid": 44,
+  "stock": 20,
+  "price": 93.31
+}
+
+
+### Table
+# @name Table_PATCH
+PATCH {{server}}/odata/v4/catalog/Table/8922169
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 8922169,
+  "auditor": "auditor-8922169",
+  "assetname": "assetname-8922169",
+  "assetid": 44,
+  "stock": 20,
+  "price": 93.31
+}
+
+
+### Table
+# @name Table_DELETE
+DELETE {{server}}/odata/v4/catalog/Table/8922169
+Content-Type: application/json
+{{auth}}
